@@ -1,3 +1,3 @@
 import './libr/libr';
 
-$('.active').show().toggle();
+$('.active').click();
