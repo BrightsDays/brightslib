@@ -1,3 +1,4 @@
 import './libr/libr';
+import $ from './libr/libr';
 
-$('.active').click();
+console.log($('div').eq(1).find('.some'));
