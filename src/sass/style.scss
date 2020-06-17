@@ -1,11 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: red;
-    color: white;
-    cursor: pointer
-}
+@import './general/_base.sass';
+@import './general/_variables.sass';
+@import './general/_typography.sass';
+@import './helpers/classes.sass';
+@import './components/ui.sass';
