@@ -20127,6 +20127,34 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeOut = function (dur,
   return this;
 };
 
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.fadeToggle = function (dur, display, fin) {
+  for (let i = 0; i < this.length; i++) {
+    if (window.getComputedStyle(this[i]).display === 'none') {
+      this[i].style.display = display || 'block';
+
+      const _fadeIn = complection => {
+        this[i].style.opacity = complection;
+      };
+
+      const ani = this.animateOverTime(dur, _fadeIn, fin);
+      requestAnimationFrame(ani);
+    } else {
+      const _fadeOut = complection => {
+        this[i].style.opacity = 1 - complection;
+
+        if (complection === 1) {
+          this[i].style.display = 'none';
+        }
+      };
+
+      const ani = this.animateOverTime(dur, _fadeOut, fin);
+      requestAnimationFrame(ani);
+    }
+  }
+
+  return this;
+};
+
 /***/ }),
 
 /***/ "./src/js/libr/modules/handlers.js":
@@ -20184,7 +20212,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _libr_libr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libr/libr */ "./src/js/libr/libr.js");
 
-
+Object(_libr_libr__WEBPACK_IMPORTED_MODULE_0__["default"])('#first').on('click', () => {
+  Object(_libr_libr__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(1).fadeToggle(800);
+});
+Object(_libr_libr__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-count="second"]').on('click', () => {
+  Object(_libr_libr__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(2).fadeToggle(800);
+});
+Object(_libr_libr__WEBPACK_IMPORTED_MODULE_0__["default"])('button').eq(2).on('click', () => {
+  Object(_libr_libr__WEBPACK_IMPORTED_MODULE_0__["default"])('.w-500').fadeToggle(800);
+});
 
 /***/ })
 
