@@ -1,0 +1,37 @@
+.dropdown
+    position: relative
+    display: inline-block
+
+    &__button
+        &::after
+            content: ''
+            display: inline-block
+            margin-left: 5px
+            vertical-align: 3px
+            border-top: 4px solid
+            border-right: 4px solid transparent
+            border-left: 4px solid transparent
+
+    &_menu
+        position: absolute
+        top: 100%
+        left: 0
+        z-index: 10
+        display: none
+        border: 1px solid rgba(0,0,0,.15)
+        border-radius: 2px
+        background-color: #ffffff
+        min-width: 20px
+        padding: 10px 0
+
+        &__item
+            display: block
+            width: 100%
+            padding: 7px 10px
+            color: $dark
+            background-color: transparent
+            border: none
+            text-decoration: none
+
+            &:hover
+                background-color: rgba(0,0,0,.15)
