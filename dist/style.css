@@ -268,3 +268,64 @@
       text-decoration: none; }
       .dropdown_menu__item:hover {
         background-color: rgba(0, 0, 0, 0.15); }
+
+.card {
+  width: 400px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1); }
+  .card__img {
+    width: 100%; }
+  .card_body {
+    padding: 20px; }
+    .card_body__title {
+      font-size: 20px;
+      margin-bottom: 10px; }
+    .card_body__text {
+      margin-bottom: 10px; }
+    .card_body__btn {
+      text-decoration: none; }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); }
+  .modal__dialog {
+    max-width: 600px;
+    margin: 100px auto; }
+  .modal__content {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    max-height: 80vh;
+    overflow-y: auto; }
+  .modal__close {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    font-size: 30px;
+    color: #000000;
+    opacity: .5;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer; }
+  .modal__header, .modal__body {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6; }
+  .modal__title {
+    font-weight: 500;
+    font-size: 20px; }
+  .modal__footer {
+    padding: 15px;
+    text-align: center; }
+  .modal .btn-success {
+    margin-right: 20px; }

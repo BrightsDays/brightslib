@@ -46,7 +46,7 @@ $.prototype.fadeOut = function(dur, display, fin) {
         const _fadeOut = (complection) => {
             this[i].style.opacity = 1 - complection;
             if (complection === 1) {
-                this[i].style.display = display || 'block';
+                this[i].style.display = 'none';
             }
         };
 
