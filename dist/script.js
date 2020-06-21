@@ -19894,6 +19894,30 @@ _core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.createModal = function (
 
 /***/ }),
 
+/***/ "./src/js/libr/components/tab.js":
+/*!***************************************!*\
+  !*** ./src/js/libr/components/tab.js ***!
+  \***************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/libr/core.js");
+
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.tab = function () {
+  for (let i = 0; i < this.length; i++) {
+    Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).on('click', () => {
+      Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).addClass('tab__item-active').siblings().removeClass('tab__item-active').closest('.tab').find('.tab__content').removeClass('tab__content-active').eq(Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])(this[i]).index()).addClass('tab__content-active');
+    });
+  }
+};
+
+Object(_core__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-tabpanel] .tab__item').tab();
+
+/***/ }),
+
 /***/ "./src/js/libr/core.js":
 /*!*****************************!*\
   !*** ./src/js/libr/core.js ***!
@@ -19946,6 +19970,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_effects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/effects */ "./src/js/libr/modules/effects.js");
 /* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/dropdown */ "./src/js/libr/components/dropdown.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modal */ "./src/js/libr/components/modal.js");
+/* harmony import */ var _components_tab_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/tab.js */ "./src/js/libr/components/tab.js");
+
 
 
 

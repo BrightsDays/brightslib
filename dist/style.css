@@ -16,7 +16,7 @@
   text-align: center; }
 
 .block-center {
-  margin: o auto; }
+  margin: 0 auto; }
 
 .hidden {
   visibility: hidden; }
@@ -329,3 +329,30 @@
     text-align: center; }
   .modal .btn-success {
     margin-right: 20px; }
+
+.tab {
+  max-width: 600px; }
+  .tab__panel {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px 4px 0 0; }
+  .tab__item {
+    font-size: 18px;
+    line-height: 27px;
+    padding: 10px 20px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    cursor: pointer; }
+    .tab__item:last-child {
+      border-right: none; }
+    .tab__item-active {
+      background-color: rgba(0, 0, 0, 0.1); }
+  .tab__content {
+    display: none;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    border-radius: 0 0 4px 4px; }
+    .tab__content-active {
+      display: block; }
