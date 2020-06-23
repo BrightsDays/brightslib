@@ -7,5 +7,6 @@ import './modules/effects';
 import './components/dropdown';
 import './components/modal';
 import './components/tab.js';
+import './components/collapse.js';
 
 export default $;

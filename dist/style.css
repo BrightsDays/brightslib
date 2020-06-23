@@ -356,3 +356,33 @@
     border-radius: 0 0 4px 4px; }
     .tab__content-active {
       display: block; }
+
+.collapse {
+  max-width: 600px; }
+  .collapse__head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 0 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px 4px 0 0;
+    font-size: 18px;
+    color: #343a40;
+    cursor: pointer; }
+    .collapse__head-active {
+      color: #025fff; }
+  .collapse__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.5s, max-height 0.6s, padding 0.1s;
+    background-color: white;
+    border: 1px solid #e0d3d3;
+    border-top: none;
+    border-radius: 0 0 4px 4px; }
+    .collapse__content-active {
+      overflow: visible;
+      opacity: 1;
+      padding: 20px;
+      max-height: none; }
