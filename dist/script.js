@@ -19925,6 +19925,89 @@ _core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.createModal = function (
 
 /***/ }),
 
+/***/ "./src/js/libr/components/slider.js":
+/*!******************************************!*\
+  !*** ./src/js/libr/components/slider.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.string.replace */ "./node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core */ "./src/js/libr/core.js");
+
+
+
+_core__WEBPACK_IMPORTED_MODULE_1__["default"].prototype.slider = function () {
+  for (let i = 0; i < this.length; i++) {
+    const width = window.getComputedStyle(this[i].querySelector('.slider__inner')).width;
+    const slides = this[i].querySelectorAll('.slider__item');
+    const field = this[i].querySelector('.slider__slides');
+    const dots = this[i].querySelectorAll('.slider__dots li');
+    field.style.width = 100 * slides.length + '%';
+    slides.forEach(slide => {
+      slide.style.width = width;
+    });
+    let offset = 0;
+    let slideIndex = 0;
+    Object(_core__WEBPACK_IMPORTED_MODULE_1__["default"])(this[i].querySelector('[data-slide="next"]')).click(e => {
+      e.preventDefault();
+
+      if (offset == +width.replace(/\D/g, '') * (slides.length - 1)) {
+        offset = 0;
+      } else {
+        offset += +width.replace(/\D/g, '');
+      }
+
+      field.style.transform = `translateX(-${offset}px)`;
+
+      if (slideIndex == slides.length - 1) {
+        slideIndex = 0;
+      } else {
+        slideIndex++;
+      }
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+    });
+    Object(_core__WEBPACK_IMPORTED_MODULE_1__["default"])(this[i].querySelector('[data-slide="prev"]')).click(e => {
+      e.preventDefault();
+
+      if (offset == 0) {
+        offset = +width.replace(/\D/g, '') * (slides.length - 1);
+      } else {
+        offset -= +width.replace(/\D/g, '');
+      }
+
+      field.style.transform = `translateX(-${offset}px)`;
+
+      if (slideIndex == 0) {
+        slideIndex = slides.length - 1;
+      } else {
+        slideIndex--;
+      }
+
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+    });
+    const sliderId = this[i].getAttribute('id');
+    Object(_core__WEBPACK_IMPORTED_MODULE_1__["default"])(`#${sliderId} .slider__dots li`).click(e => {
+      const slideTo = e.target.getAttribute('data-slide-to');
+      slideIndex = slideTo;
+      offset = +width.replace(/\D/g, '') * slideTo;
+      field.style.transform = `translateX(-${offset}px)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[slideIndex].classList.add('active');
+    });
+  }
+};
+
+Object(_core__WEBPACK_IMPORTED_MODULE_1__["default"])('.slider').slider();
+
+/***/ }),
+
 /***/ "./src/js/libr/components/tab.js":
 /*!***************************************!*\
   !*** ./src/js/libr/components/tab.js ***!
@@ -20003,6 +20086,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/modal */ "./src/js/libr/components/modal.js");
 /* harmony import */ var _components_tab_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/tab.js */ "./src/js/libr/components/tab.js");
 /* harmony import */ var _components_collapse_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/collapse.js */ "./src/js/libr/components/collapse.js");
+/* harmony import */ var _components_slider_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/slider.js */ "./src/js/libr/components/slider.js");
+
 
 
 

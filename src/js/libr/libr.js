@@ -8,5 +8,6 @@ import './components/dropdown';
 import './components/modal';
 import './components/tab.js';
 import './components/collapse.js';
+import './components/slider.js';
 
 export default $;
