@@ -9,5 +9,6 @@ import './components/modal';
 import './components/tab.js';
 import './components/collapse.js';
 import './components/slider.js';
+import './services/requests.js';
 
 export default $;
