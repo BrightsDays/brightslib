@@ -70,7 +70,7 @@ gulp.task("watch", () => {
 gulp.task("build", gulp.parallel("copy-html", "build-js", "build-sass"));
 
 gulp.task("prod", () => {
-    gulp.src("./src/sass/style.scss")
+    gulp.src("./src/sass/style.sass")
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
         .pipe(cleanCSS())
